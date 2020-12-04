@@ -8,6 +8,7 @@ import org.netbeans.api.lexer.LanguagePath;
 import org.netbeans.api.lexer.Token;
 import org.netbeans.spi.lexer.LanguageEmbedding;
 import org.netbeans.spi.lexer.LanguageProvider;
+import org.openide.util.lookup.ServiceProvider;
 
 import com.rahul.nbfortoml.FileType;
 
@@ -16,7 +17,8 @@ import com.rahul.nbfortoml.FileType;
  *
  * @author in-rahul.khandelwal
  */
-public class TomlLanguageProvider extends LanguageProvider{
+@ServiceProvider(service=LanguageProvider.class)
+public class TomlLanguageProvider extends LanguageProvider {
 
     private final Supplier<Language<?>> supplier = () -> new TomlLanguageHierarchy().language();
 

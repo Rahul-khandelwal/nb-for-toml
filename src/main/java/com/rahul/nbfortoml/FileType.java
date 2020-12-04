@@ -6,5 +6,5 @@ package com.rahul.nbfortoml;
  */
 public interface FileType {
 
-    String MIME = "text/plain";
+    String MIME = "text/x-toml";
 }
