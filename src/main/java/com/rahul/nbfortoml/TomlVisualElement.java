@@ -21,7 +21,7 @@ import org.openide.windows.TopComponent;
 @MultiViewElement.Registration(
         displayName = "#LBL_Toml_VISUAL",
         iconBase = "com/rahul/nbfortoml/toml.png",
-        mimeType = "text/plain",
+        mimeType = FileType.MIME,
         persistenceType = TopComponent.PERSISTENCE_NEVER,
         preferredID = "TomlVisual",
         position = 2000

@@ -4,7 +4,7 @@
 
     <folder name="Editors">
         <folder name="text">
-            <folder name="x-sj">
+            <folder name="x-toml">
                 <attr name="SystemFileSystem.localizingBundle" stringvalue="com.rahul.nbfortoml.Bundle"/>
                 <folder name="FontsColors">
                     <folder name="NetBeans">
@@ -22,7 +22,7 @@
     <folder name="OptionsDialog">
         <folder name="PreviewExamples">
             <folder name="text">
-                <file name="x-sj" url="TomlTemplate.toml"/>
+                <file name="toml" url="TomlTemplate.toml"/>
             </folder>
         </folder>
     </folder>

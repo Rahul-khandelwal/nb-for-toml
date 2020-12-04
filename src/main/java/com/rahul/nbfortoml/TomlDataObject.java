@@ -27,11 +27,11 @@ import org.openide.windows.TopComponent;
 })
 @MIMEResolver.ExtensionRegistration(
         displayName = "#LBL_Toml_LOADER",
-        mimeType = "text/plain",
+        mimeType = FileType.MIME,
         extension = {"toml", "TOML"}
 )
 @DataObject.Registration(
-        mimeType = "text/plain",
+        mimeType = FileType.MIME,
         iconBase = "com/rahul/nbfortoml/toml.png",
         displayName = "#LBL_Toml_LOADER",
         position = 300
@@ -92,7 +92,7 @@ public class TomlDataObject extends MultiDataObject {
 
     public TomlDataObject(FileObject pf, MultiFileLoader loader) throws DataObjectExistsException, IOException {
         super(pf, loader);
-        registerEditor("text/plain", true);
+        registerEditor(FileType.MIME, true);
     }
 
     @Override
@@ -103,7 +103,7 @@ public class TomlDataObject extends MultiDataObject {
     @MultiViewElement.Registration(
             displayName = "#LBL_Toml_EDITOR",
             iconBase = "com/rahul/nbfortoml/toml.png",
-            mimeType = "text/plain",
+            mimeType = FileType.MIME,
             persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,
             preferredID = "Toml",
             position = 1000
