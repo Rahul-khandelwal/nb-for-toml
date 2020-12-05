@@ -35,4 +35,8 @@ public class TomlTokenId implements TokenId {
     public String name() {
         return name;
     }
+
+    public int id() {
+        return id;
+    }
 }
