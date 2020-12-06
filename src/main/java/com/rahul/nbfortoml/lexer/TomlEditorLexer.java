@@ -41,8 +41,9 @@ public class TomlEditorLexer implements Lexer<TomlTokenId> {
         Token<TomlTokenId> createdToken = null;
 
         org.antlr.v4.runtime.Token token = tokenSupplier.get();
-
+        
         int type = token.getType();
+
         if (type != -1) {
             createdToken = createToken(type);
         } else if (info.input().readLength() > 0) {

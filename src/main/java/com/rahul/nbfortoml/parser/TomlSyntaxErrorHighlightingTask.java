@@ -25,14 +25,14 @@ public class TomlSyntaxErrorHighlightingTask extends ParserResultTask {
 
     @Override
     public void run(Parser.Result result, SchedulerEvent se) {
-        TomlEditorParser.PreProParserResult preProResult = (TomlEditorParser.PreProParserResult) result;
+        TomlEditorParser.TomlParserResult tomlResult = (TomlEditorParser.TomlParserResult) result;
 
-        if (preProResult.isValid()) {
+        if (tomlResult.isValid()) {
 
-            TomlLookupContext.INSTANCE.add(preProResult.getResources());
+            TomlLookupContext.INSTANCE.add(tomlResult.getResources());
 
             Document document = result.getSnapshot().getSource().getDocument(false);
-            List<TomlSyntaxError> errors = preProResult.getErrors();
+            List<TomlSyntaxError> errors = tomlResult.getErrors();
             List<ErrorDescription> descriptions = errors.stream().map(e
                     -> ErrorDescriptionFactory.createErrorDescription(
                             Severity.ERROR,

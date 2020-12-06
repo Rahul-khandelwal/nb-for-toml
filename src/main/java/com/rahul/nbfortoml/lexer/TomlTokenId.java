@@ -39,4 +39,9 @@ public class TomlTokenId implements TokenId {
     public int id() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "TomlTokenId{" + "name=" + name + ", primaryCategory=" + primaryCategory + ", id=" + id + '}';
+    }
 }

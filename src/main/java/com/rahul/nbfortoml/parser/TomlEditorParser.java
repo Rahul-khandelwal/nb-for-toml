@@ -22,7 +22,7 @@ public class TomlEditorParser extends Parser {
 
     private final Function<String, TomlParser> parserProvider;
 
-    private PreProParserResult parserResult;
+    private TomlParserResult parserResult;
 
     public TomlEditorParser(Function<String, TomlParser> parserProvider) {
         this.parserProvider = parserProvider;
@@ -42,12 +42,14 @@ public class TomlEditorParser extends Parser {
         // let antlr generated Parser parse editor input
         tompParser.toml();
 
-        // get currently parsed section of PrePro
+        // get currently parsed section of TOML
         List<TomlNode> nodes = listener.getNodes();
+
         // retrieve syntax errors from antlr Listener
         List<TomlSyntaxError> errors = errorListener.getSyntaxErrors();
-        // combine everything to PreProParserResult
-        parserResult = new PreProParserResult(snapshot, nodes, errors);
+        
+        // combine everything to TomlParserResult
+        parserResult = new TomlParserResult(snapshot, nodes, errors);
     }
 
     @Override
@@ -63,13 +65,13 @@ public class TomlEditorParser extends Parser {
     public void removeChangeListener(ChangeListener cl) {
     }
 
-    public static class PreProParserResult extends Parser.Result {
+    public static class TomlParserResult extends Parser.Result {
 
         private boolean valid = true;
         private final List<TomlNode> nodes;
         private final List<TomlSyntaxError> errors;
 
-        public PreProParserResult(Snapshot snapshot, List<TomlNode> nodes, List<TomlSyntaxError> errors) {
+        public TomlParserResult(Snapshot snapshot, List<TomlNode> nodes, List<TomlSyntaxError> errors) {
             super(snapshot);
             this.nodes = nodes;
             this.errors = errors;

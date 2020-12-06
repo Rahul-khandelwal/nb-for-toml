@@ -9,11 +9,12 @@ import com.rahul.nbfortoml.grammer.TomlLexer;
  * @author in-rahul.khandelwal
  */
 public enum Category {
-    LITERAL(TomlLexer.UnquotedKey, TomlLexer.TrueBoolean, TomlLexer.FalseBoolean, TomlLexer.Z,
-            TomlLexer.StringChar, TomlLexer.DateDigits, TomlLexer.TimeDelimiter, TomlLexer.ArrayStart,
-            TomlLexer.InlineTableStart, TomlLexer.TableKeyStart, TomlLexer.ArrayTableKeyStart),
-    OPERATOR(TomlLexer.ArrayEnd, TomlLexer.TableKeyEnd, TomlLexer.ArrayTableKeyEnd, 
-            TomlLexer.InlineTableEnd, TomlLexer.Dot, TomlLexer.Dash, TomlLexer.Plus, TomlLexer.Colon,
+    TOML_KEY(TomlLexer.UnquotedKey),
+    LITERAL(TomlLexer.TrueBoolean, TomlLexer.FalseBoolean, TomlLexer.Z,
+            TomlLexer.StringChar, TomlLexer.DateDigits, TomlLexer.TimeDelimiter),
+    OPERATOR(TomlLexer.ArrayStart, TomlLexer.ArrayEnd, TomlLexer.TableKeyStart, TomlLexer.TableKeyEnd,
+            TomlLexer.ArrayTableKeyStart, TomlLexer.ArrayTableKeyEnd, TomlLexer.InlineTableStart, TomlLexer.InlineTableEnd,
+            TomlLexer.Dot, TomlLexer.Dash, TomlLexer.Plus, TomlLexer.Colon,
             TomlLexer.Equals, TomlLexer.Comma, TomlLexer.Apostrophe,
             TomlLexer.MLLiteralStringEnd, TomlLexer.QuotationMark, TomlLexer.MLBasicStringEnd, 
             TomlLexer.TripleApostrophe, TomlLexer.TripleQuotationMark, TomlLexer.EscapeSequence),

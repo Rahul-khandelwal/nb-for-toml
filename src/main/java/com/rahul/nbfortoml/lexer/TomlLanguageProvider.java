@@ -20,10 +20,10 @@ import com.rahul.nbfortoml.FileType;
 @ServiceProvider(service=LanguageProvider.class)
 public class TomlLanguageProvider extends LanguageProvider {
 
-    private final Supplier<Language<?>> supplier = () -> new TomlLanguageHierarchy().language();
+    private final Supplier<Language<TomlTokenId>> supplier = () -> new TomlLanguageHierarchy().language();
 
     @Override
-    public Language<?> findLanguage(String mime) {
+    public Language<TomlTokenId> findLanguage(String mime) {
         return (FileType.MIME.equals(mime)) ? supplier.get() : null;
     }
 
