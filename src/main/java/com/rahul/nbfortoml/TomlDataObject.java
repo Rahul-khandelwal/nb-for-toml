@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.rahul.nbfortoml;
 
 import java.io.IOException;
@@ -23,7 +18,7 @@ import org.openide.util.NbBundle.Messages;
 import org.openide.windows.TopComponent;
 
 @Messages({
-    "LBL_Toml_LOADER=Files of Toml"
+    "LBL_Toml_LOADER=Toml Files"
 })
 @MIMEResolver.ExtensionRegistration(
         displayName = "#LBL_Toml_LOADER",
